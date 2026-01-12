@@ -8,7 +8,7 @@ import vercel from '@astrojs/vercel';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'static',
+	site: 'https://idktheflag.vercel.app',
   integrations: [tailwind(), mdx(), sitemap()],
   adapter: vercel(),
 });

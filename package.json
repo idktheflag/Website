@@ -6,7 +6,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+	"test:prod": "bun run build && bun run preview",
+	"test:vercel": "vercel dev"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.13",
