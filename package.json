@@ -7,13 +7,14 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-	"test:prod": "bun run build && bun run preview",
-	"test:vercel": "vercel dev"
+    "test:prod": "bun run build && bun run preview",
+    "test:vercel": "vercel dev"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.13",
     "@astrojs/rss": "^4.0.14",
     "@astrojs/sitemap": "^3.6.1",
+    "@astrojs/starlight": "^0.37.2",
     "@astrojs/tailwind": "^6.0.2",
     "@astrojs/vercel": "^9.0.3",
     "astro": "^5.16.8",
