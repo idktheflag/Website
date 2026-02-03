@@ -1,0 +1,74 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title="Documentation | idktheflag" description="CTF guides and tutorials from the idktheflag team" />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>📚 idktheflag Wiki</h1>
+			<p class="tagline">Pwn, Crypto, and Chaos.</p>
+			
+			<h2>Categories</h2>
+			<ul class="categories">
+				<li>
+					<h3>🔨 Pwn</h3>
+					<p>Binary exploitation, heap grooming, ROP chains, and more</p>
+					<ul>
+						<li><a href="/pwn/introduction/">Introduction to Pwn</a></li>
+						<li><a href="/pwn/rop-chains/">ROP Chains</a></li>
+					</ul>
+				</li>
+				<li>
+					<h3>🔐 Crypto</h3>
+					<p>Cryptanalysis, number theory, and breaking ciphers</p>
+					<ul>
+						<li><a href="/crypto/introduction/">Introduction to Crypto</a></li>
+						<li><a href="/crypto/rsa-attacks/">Common RSA Attacks</a></li>
+					</ul>
+				</li>
+				<li>
+					<h3>🌐 Web Exploitation</h3>
+					<p>XSS, SQLi, and modern web exploitation techniques</p>
+					<ul>
+						<li><a href="/web/introduction/">Introduction to Web Exploitation</a></li>
+						<li><a href="/web/xss-techniques/">XSS Techniques</a></li>
+					</ul>
+				</li>
+			</ul>
+
+			<h2>Getting Started</h2>
+			<p>New to the team? Check out our <a href="/general/setup/">Team Setup Guide</a> to get up and running.</p>
+		</main>
+		<Footer />
+		<style>
+			.tagline {
+				font-size: 1.2em;
+				color: rgb(var(--gray));
+				margin-bottom: 2em;
+			}
+			.categories {
+				list-style: none;
+				padding: 0;
+			}
+			.categories > li {
+				margin-bottom: 2em;
+				padding: 1.5em;
+				background: rgb(var(--gray-light));
+				border-radius: 8px;
+			}
+			.categories h3 {
+				margin-top: 0;
+			}
+			.categories ul {
+				margin: 0.5em 0 0 1.5em;
+			}
+		</style>
+	</body>
+</html>
