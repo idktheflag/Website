@@ -28,11 +28,6 @@ export default defineConfig({
           label: 'GitHub',
           href: 'https://github.com/idktheflag' 
         },
-        { 
-          icon: 'discord', 
-          label: 'Discord',
-          href: 'https://discord.gg/your-invite-code' 
-        },
       ],
 
       // Sidebar navigation (Auto-generates from src/content/docs/folder-name)
