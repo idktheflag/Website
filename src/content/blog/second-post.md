@@ -1,6 +1,8 @@
 ---
 title: 'Second post'
 description: 'Lorem ipsum dolor sit amet'
+author: 'Bob'
+authorGithub: 'bob-hacker'
 pubDate: 'Jul 15 2022'
 heroImage: '../../assets/blog-placeholder-4.jpg'
 ---

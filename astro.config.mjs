@@ -17,23 +17,23 @@ export default defineConfig({
   adapter: vercel(),
 
   integrations: [
-    // Standard site integrations
-    tailwind(),
-    mdx(),
-    sitemap(),
-
-    // The Wiki Configuration
+    // The Wiki Configuration - must come before MDX for code blocks to work
     starlight({
       title: 'idktheflag Wiki',
       
-      // CRITICAL: Mounts the wiki at /wiki so it doesn't overwrite your homepage
-      base: '/wiki',
-      
       // Social links in the top right of the wiki
-      social: {
-        github: 'https://github.com/your-org/idktheflag',
-        discord: 'https://discord.gg/your-invite-code',
-      },
+      social: [
+        { 
+          icon: 'github', 
+          label: 'GitHub',
+          href: 'https://github.com/idktheflag' 
+        },
+        { 
+          icon: 'discord', 
+          label: 'Discord',
+          href: 'https://discord.gg/your-invite-code' 
+        },
+      ],
 
       // Sidebar navigation (Auto-generates from src/content/docs/folder-name)
       sidebar: [
@@ -61,5 +61,10 @@ export default defineConfig({
       // Optional: Add custom CSS for the wiki if you want to match the main site theme
       customCss: [],
     }),
+    
+    // Standard site integrations
+    tailwind(),
+    mdx(),
+    sitemap(),
   ],
 });
