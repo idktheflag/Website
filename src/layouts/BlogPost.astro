@@ -8,7 +8,7 @@ import Header from '../components/Header.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, author, authorGithub } = Astro.props;
 ---
 
 <html lang="en">
@@ -52,6 +52,18 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			.last-updated-on {
 				font-style: italic;
 			}
+			.author {
+				margin-top: 0.5em;
+				color: rgb(var(--gray));
+				font-size: 0.95em;
+			}
+			.author a {
+				color: rgb(var(--accent));
+				text-decoration: none;
+			}
+			.author a:hover {
+				text-decoration: underline;
+			}
 		</style>
 	</head>
 
@@ -75,6 +87,15 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 							}
 						</div>
 						<h1>{title}</h1>
+						{author && (
+							<div class="author">
+								By {authorGithub ? (
+									<a href={`https://github.com/${authorGithub}`} target="_blank" rel="noopener noreferrer">
+										{author}
+									</a>
+								) : author}
+							</div>
+						)}
 						<hr />
 					</div>
 					<slot />
