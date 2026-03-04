@@ -1,0 +1,85 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="About | idktheflag">
+    <main class="container">
+        <h1>About idktheflag</h1>
+        
+        <div class="terminal-box">
+            <p><span class="prompt">$</span> whoami</p>
+            <p><strong>[STATUS]:</strong> Active</p>
+            <p><strong>[SPECIALTY]:</strong> Pwn, Crypto, Web Exploitation</p>
+            <p><strong>[MOTTO]:</strong> "I don't know the flag, but I will find it."</p>
+        </div>
+
+        <section class="prose">
+            <p>
+                We are <strong>idktheflag</strong>, a Capture The Flag (CTF) team born out of late-night debugging sessions, excessive caffeine consumption, and a shared hatred for light mode.
+            </p>
+            <p>
+                Our logo is drawn in MS Paint, but our exploits are written in Python, C, and sheer willpower. We compete in global CTF tournaments, breaking cryptography, grooming heaps, and popping shells.
+            </p>
+            
+            <h2>The Roster</h2>
+            <ul class="roster-list">
+                <li><strong>river</strong> — Pwn / Binary Exploitation (Chief of the Scorched Earth Protocol)</li>
+                <li><em>[Insert Teammate 2]</em> — Web / OSINT</li>
+                <li><em>[Insert Teammate 3]</em> — Crypto / Reverse Engineering</li>
+            </ul>
+
+            <h2>Join the Chaos</h2>
+            <p>
+                Check out our <a href="/blog">write-ups</a> to see how we tackle challenges, or hit up our <a href="https://github.com/idktheflag" target="_blank">GitHub</a> to steal our scripts.
+            </p>
+        </section>
+    </main>
+</Layout>
+
+<style>
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+    }
+
+    .terminal-box {
+        background-color: #161b22;
+        border: 1px solid #30363d;
+        border-left: 4px solid var(--accent);
+        padding: 1.5rem;
+        margin: 2rem 0;
+        font-family: "Courier New", monospace;
+        border-radius: 4px;
+    }
+
+    .terminal-box p {
+        margin: 0.5rem 0;
+        color: #e6edf3;
+    }
+
+    .prompt {
+        color: var(--accent);
+        font-weight: bold;
+    }
+
+    .prose p {
+        margin-bottom: 1.5rem;
+        font-size: 1.1em;
+    }
+
+    .prose h2 {
+        margin-top: 2rem;
+        color: var(--text-heading);
+    }
+
+    .roster-list {
+        list-style-type: square;
+        padding-left: 1.5rem;
+    }
+
+    .roster-list li {
+        margin-bottom: 0.8rem;
+        font-size: 1.1em;
+    }
+</style>
