@@ -2,19 +2,85 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="404 - System Not Found">
-  <script is:inline>
-    // If they got lost inside the docs, instantly redirect them to the docs homepage
-    if (window.location.pathname.startsWith('/docs')) {
-      window.location.replace('/docs/');
-    }
-  </script>
-
-  <main class="flex flex-col items-center justify-center h-screen bg-[#0f0f13] text-gray-300 font-mono">
-    <h1 class="text-6xl text-red-500 font-bold mb-4">[404]</h1>
-    <p class="text-xl">Payload dropped. You are lost in the mainframe.</p>
-    <a href="/" class="mt-8 px-4 py-2 border border-green-500 text-green-500 hover:bg-green-500 hover:text-black transition-colors">
-      Return to idktheflag.sh
-    </a>
-  </main>
+<Layout title="404: Flag Not Found | idktheflag">
+    <main class="container">
+        <div class="error-terminal">
+            <h1>404</h1>
+            <h2>Flag Not Found</h2>
+            <div class="terminal-text">
+                <p>> ERROR: Directory traversal failed.</p>
+                <p>> The requested endpoint does not exist on this server.</p>
+                <p>> (Or maybe you just lack the privileges to view it.)</p>
+            </div>
+            <a href="/" class="cd-home">> cd /home</a>
+        </div>
+    </main>
 </Layout>
+
+<style>
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 4rem 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 60vh;
+    }
+
+    .error-terminal {
+        border: 1px solid #30363d;
+        background-color: #161b22;
+        padding: 3rem;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    h1 {
+        font-size: 6rem;
+        color: var(--accent);
+        margin: 0;
+        line-height: 1;
+        font-family: "Courier New", monospace;
+        text-shadow: 2px 2px 0px rgba(255, 75, 75, 0.3);
+    }
+
+    h2 {
+        margin-top: 0.5rem;
+        margin-bottom: 2rem;
+        color: var(--text-heading);
+        font-family: "Atkinson", monospace;
+    }
+
+    .terminal-text {
+        font-family: "Courier New", monospace;
+        color: #8b949e;
+        text-align: left;
+        margin-bottom: 2.5rem;
+        line-height: 1.2;
+    }
+    
+    .terminal-text p {
+        margin: 0.5rem 0;
+    }
+
+    .cd-home {
+        display: inline-block;
+        font-family: "Courier New", monospace;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: var(--bg-color);
+        background-color: var(--accent);
+        padding: 0.6rem 1.2rem;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+
+    .cd-home:hover {
+        background-color: var(--accent-hover);
+        text-decoration: none;
+        transform: translateY(-2px);
+    }
+</style>
