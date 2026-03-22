@@ -5,8 +5,8 @@
     "": {
       "name": "website",
       "dependencies": {
-        "@astrojs/starlight": "^0.38.2",
-        "astro": "^6.0.8",
+        "@astrojs/starlight": "latest",
+        "astro": "latest",
       },
     },
   },
