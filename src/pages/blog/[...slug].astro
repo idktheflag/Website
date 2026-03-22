@@ -13,15 +13,27 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 // ASTRO 5 RENDERING METHOD
 const { Content } = await render(post);
+const authors = Array.isArray(post.data.author) ? post.data.author : [post.data.author];
 ---
 
 <Layout title={`${post.data.title} | idktheflag`}>
     <article class="writeup">
         <header>
             <h1>{post.data.title}</h1>
-            <p class="terminal-meta">
-                > AUTHOR: {post.data.author} | DATE: {post.data.pubDate.toLocaleDateString()}
-            </p>
+            <div class="meta">
+                <div class="meta-authors">
+                    {authors.map(name => (
+						<div class="author">
+							<span>Author:</span>
+                            <img src={`/pfps/${name.toLowerCase()}.png`} alt={name} class="author-pfp" />
+                            <span>{name}</span>
+                        </div>
+                    ))}
+                </div>
+                <div class="meta-date">
+                    <span>> DATE: {post.data.pubDate.toLocaleDateString()}</span>
+                </div>
+            </div>
             <p class="desc">{post.data.description}</p>
         </header>
         
@@ -44,11 +56,37 @@ const { Content } = await render(post);
         padding-bottom: 1rem;
     }
 
-    .terminal-meta {
-        color: var(--accent);
+    .meta {
         font-family: monospace;
-        font-size: 0.9em;
-        margin-top: 0;
+        font-size: 1.1em;
+        margin-top: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .meta-authors {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+
+    .author {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--accent);
+    }
+
+    .author-pfp {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .meta-date {
+        color: var(--accent);
     }
 
     .desc {

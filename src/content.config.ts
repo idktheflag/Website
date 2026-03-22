@@ -8,7 +8,7 @@ const blog = defineCollection({
         title: z.string(),
         description: z.string(),
         pubDate: z.coerce.date(),
-        author: z.string().default('idktheflag team'),
+        author: z.union([z.string(), z.array(z.string())]).default('idktheflag team'),
     }),
 });
 
