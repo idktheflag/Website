@@ -1,5 +1,7 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
+import { docsLoader } from '@astrojs/starlight/loaders';
+import { docsSchema } from '@astrojs/starlight/schema';
 
 const blog = defineCollection({
     // Astro 5 Explicit Glob Loader
@@ -11,5 +13,8 @@ const blog = defineCollection({
         author: z.string().default('idktheflag team'),
     }),
 });
-
-export const collections = { blog };
+const docs = defineCollection({
+    loader: docsLoader(),
+    schema: docsSchema(),
+});
+export const collections = { blog, docs };
