@@ -6,11 +6,19 @@ const posts = await getCollection('blog');
 
 const ctfs = [
     {
+        name: 'picoCTF 2026',
+        place: '14th HS / 35th Global',
+        ctfPoints: 14500,
+        ratingPoints: null,
+        writeups: ['paper-2-writeup'],
+        note: 'Not on CTFtime',
+    },
+    {
         name: 'LA CTF 2026',
         place: 150,
         ctfPoints: 2871,
         ratingPoints: 19.276,
-        writeups: ['paper-2-writeup'],
+        writeups: [],
     },
     {
         name: 'PascalCTF 2026',
@@ -35,8 +43,12 @@ const ctfs = [
     },
 ];
 
-// Sort by rating points descending
-ctfs.sort((a, b) => b.ratingPoints - a.ratingPoints);
+// Sort: entries without rating points first, then by rating points descending
+ctfs.sort((a, b) => {
+    if (a.ratingPoints === null) return -1;
+    if (b.ratingPoints === null) return 1;
+    return b.ratingPoints - a.ratingPoints;
+});
 
 // Resolve writeup posts
 function getWriteupPosts(writeupIds: string[]) {
@@ -87,10 +99,10 @@ function getWriteupPosts(writeupIds: string[]) {
                         const writeupPosts = getWriteupPosts(ctf.writeups);
                         return (
                             <tr>
-                                <td class="place">#{ctf.place}</td>
-                                <td class="event">{ctf.name}</td>
-                                <td>{ctf.ctfPoints.toLocaleString()}</td>
-                                <td>{ctf.ratingPoints}</td>
+                                <td class="place">{typeof ctf.place === 'number' ? `#${ctf.place}` : ctf.place}</td>
+                                <td class="event">{ctf.name}{ctf.note && <span class="note"> ({ctf.note})</span>}</td>
+                                <td>{ctf.ctfPoints !== null ? ctf.ctfPoints.toLocaleString() : '-'}</td>
+                                <td>{ctf.ratingPoints !== null ? ctf.ratingPoints : '-'}</td>
                                 <td class="writeups-cell">
                                     {writeupPosts.length > 0 ? (
                                         writeupPosts.map(p => (
@@ -199,5 +211,11 @@ function getWriteupPosts(writeupIds: string[]) {
 
     .no-writeup {
         color: #484f58;
+    }
+
+    .note {
+        color: #8b949e;
+        font-size: 0.85em;
+        font-weight: normal;
     }
 </style>
