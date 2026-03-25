@@ -4,7 +4,7 @@ nicknames: ['river', 'gaslight gatekeep get shell', 'ctf mrekk']
 pfp: /pfps/riverxia.png
 role: Captain & Founder
 specialties: ['web', 'rev', 'misc', 'legit everything']
-hobbies: ['caffeine', 'ctfs', 'osu!', 'linux', 'being femboy', 'being pansexual']
+hobbies: ['caffeine', 'ctfs', 'osu!', 'linux', 'being femboy', 'being pansexual', 'composing/arranging', 'kissing men']
 socials:
   - name: GitHub
     url: https://github.com/TogiFerretFerret
