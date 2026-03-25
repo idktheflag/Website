@@ -9,6 +9,7 @@ socials:
   - name: GitHub
     url: https://github.com/cyber-girl25
 active: true
+order: 5
 ---
 
 Hi! I'm Aanya, though I sometimes go by Anna. I learned programming in 4th grade, though I really got into it in 6th grade. I'm interested in computer science, cybersecurity, and astrophysics. I'm still pretty new to cybersecurity, so I'm still learning!

@@ -3,8 +3,8 @@ import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 
 const members = await getCollection('team');
-const active = members.filter(m => m.data.active);
-const retired = members.filter(m => !m.data.active);
+const active = members.filter(m => m.data.active).sort((a, b) => a.data.order - b.data.order);
+const retired = members.filter(m => !m.data.active).sort((a, b) => a.data.order - b.data.order);
 ---
 
 <Layout title="Bios | idktheflag">

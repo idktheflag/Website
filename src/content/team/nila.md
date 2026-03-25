@@ -12,6 +12,7 @@ socials:
   - name: Website
     url: https://portfolio-shalinsrms-projects.vercel.app/
 active: true
+order: 3
 ---
 
 Hey, I'm Shalin (nila). I'm interested in cybersecurity and business. See some of my accomplishments below!

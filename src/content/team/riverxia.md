@@ -13,6 +13,7 @@ socials:
   - name: osu!
     url: https://osu.ppy.sh/users/34415790
 active: true
+order: 1
 ---
 
 legit everything lol (carry w)
