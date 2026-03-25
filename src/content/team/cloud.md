@@ -7,6 +7,7 @@ specialties: ['general']
 hobbies: ['gym', 'philosophy', 'robotics', 'swimming']
 socials: []
 active: true
+status: semi-active
 order: 6
 ---
 

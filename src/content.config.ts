@@ -25,6 +25,7 @@ const team = defineCollection({
             url: z.string(),
         })).default([]),
         active: z.boolean().default(true),
+        status: z.enum(['active', 'semi-active', 'retired']).default('active'),
         order: z.number().default(99),
     }),
 });

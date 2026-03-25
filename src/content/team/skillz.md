@@ -7,6 +7,7 @@ specialties: []
 hobbies: []
 socials: []
 active: false
+status: retired
 ---
 
 epic coach

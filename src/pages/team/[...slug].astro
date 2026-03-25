@@ -12,7 +12,7 @@ export async function getStaticPaths() {
 
 const { member } = Astro.props;
 const { Content } = await render(member);
-const { name, nicknames, pfp, role, specialties, hobbies, socials, active } = member.data;
+const { name, nicknames, pfp, role, specialties, hobbies, socials, active, status } = member.data;
 ---
 
 <Layout title={`${name} | idktheflag`}>
@@ -24,8 +24,8 @@ const { name, nicknames, pfp, role, specialties, hobbies, socials, active } = me
                 {nicknames.length > 0 && (
                     <p class="nicknames">aka {nicknames.join(', aka ')}</p>
                 )}
-                <span class={`role-badge ${active ? '' : 'inactive'}`}>
-                    {role}{!active && ' (retired)'}
+                <span class={`role-badge ${status !== 'active' ? 'inactive' : ''}`}>
+                    {role}{status === 'semi-active' && ' (semi-active)'}{status === 'retired' && ' (retired)'}
                 </span>
             </div>
         </div>

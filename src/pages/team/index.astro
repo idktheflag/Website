@@ -3,8 +3,9 @@ import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 
 const members = await getCollection('team');
-const active = members.filter(m => m.data.active).sort((a, b) => a.data.order - b.data.order);
-const retired = members.filter(m => !m.data.active).sort((a, b) => a.data.order - b.data.order);
+const active = members.filter(m => m.data.status === 'active').sort((a, b) => a.data.order - b.data.order);
+const semiActive = members.filter(m => m.data.status === 'semi-active').sort((a, b) => a.data.order - b.data.order);
+const retired = members.filter(m => m.data.status === 'retired').sort((a, b) => a.data.order - b.data.order);
 ---
 
 <Layout title="Bios | idktheflag">
@@ -29,9 +30,26 @@ const retired = members.filter(m => !m.data.active).sort((a, b) => a.data.order 
                 ))}
             </div>
 
+            {semiActive.length > 0 && (
+                <>
+                    <h2>Semi-Active</h2>
+                    <div class="member-grid">
+                        {semiActive.map(m => (
+                            <a href={`/team/${m.id}`} class="member-card semi-active">
+                                <img src={m.data.pfp} alt={m.data.name} class="member-pfp" />
+                                <div class="member-info">
+                                    <strong>{m.data.name}</strong>
+                                    <span class="member-role">{m.data.role}</span>
+                                </div>
+                            </a>
+                        ))}
+                    </div>
+                </>
+            )}
+
             {retired.length > 0 && (
                 <>
-                    <h2>Retired/Semi-Active</h2>
+                    <h2>Retired</h2>
                     <div class="member-grid">
                         {retired.map(m => (
                             <a href={`/team/${m.id}`} class="member-card retired">
@@ -94,6 +112,10 @@ const retired = members.filter(m => !m.data.active).sort((a, b) => a.data.order 
 
     .member-card:hover {
         border-color: var(--accent);
+    }
+
+    .member-card.semi-active {
+        opacity: 0.75;
     }
 
     .member-card.retired {
