@@ -1,0 +1,203 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+
+const posts = await getCollection('blog');
+
+const ctfs = [
+    {
+        name: 'LA CTF 2026',
+        place: 150,
+        ctfPoints: 2871,
+        ratingPoints: 19.276,
+        writeups: ['paper-2-writeup'],
+    },
+    {
+        name: 'PascalCTF 2026',
+        place: 134,
+        ctfPoints: 4705,
+        ratingPoints: 15.394,
+        writeups: [],
+    },
+    {
+        name: '0xFUN CTF 2026',
+        place: 72,
+        ctfPoints: 7291,
+        ratingPoints: 7.088,
+        writeups: [],
+    },
+    {
+        name: 'Pragyan CTF 2026',
+        place: 335,
+        ctfPoints: 450,
+        ratingPoints: 0.128,
+        writeups: [],
+    },
+];
+
+// Sort by rating points descending
+ctfs.sort((a, b) => b.ratingPoints - a.ratingPoints);
+
+// Resolve writeup posts
+function getWriteupPosts(writeupIds: string[]) {
+    return writeupIds
+        .map(id => posts.find(p => p.id === id))
+        .filter(Boolean);
+}
+---
+
+<Layout title="CTFs | idktheflag">
+    <main class="container">
+        <h1>CTF History</h1>
+        <div class="stats-bar">
+            <div class="stat">
+                <span class="stat-label">Overall Rating</span>
+                <span class="stat-value">#576</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Country (US)</span>
+                <span class="stat-value">#44</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Rating Points</span>
+                <span class="stat-value">41.885</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Year</span>
+                <span class="stat-value">2026</span>
+            </div>
+        </div>
+        <p class="ctftime-link">
+            full stats on <a href="https://ctftime.org/team/419270" target="_blank">CTFtime</a>
+        </p>
+
+        <div class="ctf-table-wrapper">
+            <table class="ctf-table">
+                <thead>
+                    <tr>
+                        <th>Place</th>
+                        <th>Event</th>
+                        <th>CTF Points</th>
+                        <th>Rating Points</th>
+                        <th>Writeups</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {ctfs.map(ctf => {
+                        const writeupPosts = getWriteupPosts(ctf.writeups);
+                        return (
+                            <tr>
+                                <td class="place">#{ctf.place}</td>
+                                <td class="event">{ctf.name}</td>
+                                <td>{ctf.ctfPoints.toLocaleString()}</td>
+                                <td>{ctf.ratingPoints}</td>
+                                <td class="writeups-cell">
+                                    {writeupPosts.length > 0 ? (
+                                        writeupPosts.map(p => (
+                                            <a href={`/blog/${p!.id}/`}>{p!.data.title}</a>
+                                        ))
+                                    ) : (
+                                        <span class="no-writeup">-</span>
+                                    )}
+                                </td>
+                            </tr>
+                        );
+                    })}
+                </tbody>
+            </table>
+        </div>
+    </main>
+</Layout>
+
+<style>
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+    }
+
+    .stats-bar {
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        margin: 1.5rem 0;
+        padding: 1rem 1.5rem;
+        background-color: #161b22;
+        border: 1px solid #30363d;
+        border-left: 4px solid var(--accent);
+        border-radius: 4px;
+    }
+
+    .stat {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+
+    .stat-label {
+        font-size: 0.8em;
+        color: #8b949e;
+        font-family: monospace;
+        text-transform: uppercase;
+    }
+
+    .stat-value {
+        font-size: 1.3em;
+        font-weight: bold;
+        color: var(--accent);
+        font-family: monospace;
+    }
+
+    .ctftime-link {
+        color: #8b949e;
+        margin-bottom: 2rem;
+    }
+
+    .ctf-table-wrapper {
+        overflow-x: auto;
+    }
+
+    .ctf-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: monospace;
+        font-size: 0.95em;
+    }
+
+    .ctf-table th {
+        text-align: left;
+        padding: 0.6rem 0.8rem;
+        border-bottom: 2px solid var(--accent);
+        color: var(--accent);
+        font-size: 0.85em;
+        text-transform: uppercase;
+    }
+
+    .ctf-table td {
+        padding: 0.6rem 0.8rem;
+        border-bottom: 1px solid #21262d;
+    }
+
+    .ctf-table tr:hover td {
+        background-color: #161b22;
+    }
+
+    .place {
+        color: var(--accent);
+        font-weight: bold;
+    }
+
+    .event {
+        font-weight: bold;
+        color: var(--text-heading);
+    }
+
+    .writeups-cell a {
+        display: block;
+        font-size: 0.9em;
+    }
+
+    .no-writeup {
+        color: #484f58;
+    }
+</style>

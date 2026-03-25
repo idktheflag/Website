@@ -1,5 +1,6 @@
 ---
 import Header from '../components/Header.astro';
+import Terminal from '../components/Terminal.astro';
 const { title = "idktheflag" } = Astro.props;
 ---
 <!DOCTYPE html>
@@ -20,8 +21,9 @@ const { title = "idktheflag" } = Astro.props;
 	<body>
     <Header />
 	<main class="content-wrapper">
-        <slot /> 
+        <slot />
     </main>
+    <Terminal />
 </body>
 </html>
 
