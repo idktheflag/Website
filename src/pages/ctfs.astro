@@ -6,34 +6,20 @@ const posts = await getCollection('blog');
 
 const ctfs = [
     {
-        name: 'MetaCTF March 2026 Flash CTF',
-        place: '12th & 13th (full solve)',
-        ctfPoints: 1050,
-        ratingPoints: null,
-        writeups: ['whiterabbit-writeup', 'brandkit-studio-writeup'],
-        note: 'Individual comp, riverxia + qu1ck5h0t',
-    },
-    {
         name: 'picoCTF 2026',
-        place: '14th HS / 35th Global',
+        place: '14th HS / 35th Global (full solve)',
         ctfPoints: 14500,
         ratingPoints: null,
         writeups: ['paper-2-writeup'],
         note: 'Not on CTFtime',
     },
     {
-        name: 'LA CTF 2026',
-        place: 150,
-        ctfPoints: 2871,
-        ratingPoints: 19.276,
-        writeups: [],
-    },
-    {
-        name: 'PascalCTF 2026',
-        place: 134,
-        ctfPoints: 4705,
-        ratingPoints: 15.394,
-        writeups: [],
+        name: 'MetaCTF March 2026 Flash CTF',
+        place: '12th & 13th (full solve)',
+        ctfPoints: 1050,
+        ratingPoints: null,
+        writeups: ['whiterabbit-writeup', 'brandkit-studio-writeup'],
+        note: 'Individual comp, riverxia + qu1ck5h0t',
     },
     {
         name: '0xFUN CTF 2026',
@@ -43,20 +29,27 @@ const ctfs = [
         writeups: [],
     },
     {
+        name: 'LA CTF 2026',
+        place: 150,
+        ctfPoints: 2871,
+        ratingPoints: 19.276,
+        writeups: [],
+    },
+    {
         name: 'Pragyan CTF 2026',
         place: 335,
         ctfPoints: 450,
         ratingPoints: 0.128,
         writeups: [],
     },
+    {
+        name: 'PascalCTF 2026',
+        place: 134,
+        ctfPoints: 4705,
+        ratingPoints: 15.394,
+        writeups: [],
+    },
 ];
-
-// Sort: entries without rating points first, then by rating points descending
-ctfs.sort((a, b) => {
-    if (a.ratingPoints === null) return -1;
-    if (b.ratingPoints === null) return 1;
-    return b.ratingPoints - a.ratingPoints;
-});
 
 // Resolve writeup posts
 function getWriteupPosts(writeupIds: string[]) {
