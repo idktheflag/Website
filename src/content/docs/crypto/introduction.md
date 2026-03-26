@@ -16,22 +16,13 @@ Ok now onto an overview of the cool stuff you'll be doing.
 
 ## There's no way I can reasonably list everything you need to know on a single page, so here are the categories of the stuff we'll go through
 
-- Ciphers (very ez stuff, cyberchef + dcode.fr == flag. Chall devs think pigpen and morse are slick, they ain't)
-  
-- RSA Challs (either very very ez or your posterior will hurt a lot next morning)
-  
-- Block Ciphers (remember kids, you can't break AES but they'll ALWAYS wrongly configure it. Or try to make their own. Don't worry about that, because you'll either be able to solve it with common sense or fail)
-  
-- Hash Functions (SHA-256 shouldn't be crackable but wordlists will help you solve the easy challs. Good luck on solving the collision ones tho)
-  
-- ECC (HAHA, the clanker who was here before me forgot this one! And for good reason, because this stuff is pretty tough)
-
-- PRNG (if it doesn't say CSPRNG, it can be broken. If it says CSPRNG and you see it in a chall, it's not CSPRNG. Don't know what those mean? Don't worry, keep reading)
-
-- Lattice attacks (this is the stuff I'm worst at, but rest assured I'll get good enough at it to teach you. Fun fact: the NIST's first post-quantum encryption standard works on that stuff, neat innit?)
-
+- Number theory and Lattices (assuming you know basic encoding and ciphers, this will get you a GOATED foundation that makes crypto easy)
+- RSA Challs (super easy but often hidden in places that will make you cry)
+- ECC (This stuff is pretty tough, but you'll be fine if your foundations are good)
+- Hash Functions (essentially weak hash + wordlists + birthday attack)
+- Block Ciphers (remember kids, you can't break AES but they'll ALWAYS wrongly configure it)
+- PRNG (if it doesn't say CSPRNG, it can be broken. If it says CSPRNG and you see it in a chall, it's not CSPRNG)
 - Blockchain (actually I've seen people list this as its own category, and most blockchain challs are just smart contract exploits. I'll run ya through the crypto aspects of it though, to give you an idea of what's under the hood)
-
 - Steganography (again, mostly a separate category but sometimes there's a lot of maths in it and that's where I'd claim a territory dispute)
   
 
