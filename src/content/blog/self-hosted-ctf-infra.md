@@ -97,7 +97,7 @@ We also registered a custom **netcat** challenge type in CTFd. When a player lau
 
 # The Remote Workflow
 
-I'm in NYC. The server is in Ohio. I never SSH in.
+I'm in NYC. The server is in Ohio. I never SSH in \(except for building challs and every other thing because I'm on aarch64 \[asahi linux\] and we're targeting amd64\).
 
 **Pushing challenges**: `./build-challenges.sh my-chall` builds a Docker image locally and pushes it through the Cloudflare Tunnel to a private Docker Registry running on the server. The registry is exposed at `reg-ctf.domain.tld` — same wildcard cert, same tunnel.
 
