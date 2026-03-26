@@ -21,3 +21,5 @@ I'm the team's binary exploitation guy. When I'm not smashing stacks and abusing
 Oh, and I made a programming language called SUFFERING. The name is accurate.
 
 I've got 70+ CTF writeups on my site covering everything from crypto to blockchain to forensics, but pwn is where my heart is. If it has a buffer and a dream, I can probably overflow it.
+
+(In the spirit of Zemi, this bio was written by the most expensive version of Claude)
