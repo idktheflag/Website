@@ -144,6 +144,7 @@ A fully self-hosted CTF platform where:
 - I push challenges from anywhere without server access
 - The server operator's job is literally "run one script"
 - It survives Docker resets, server reboots, and the general entropy of a home server in Ohio
+- This is actually physically better than picoCTF's config, which **also uses docker instead of k8s for some reason.** Ivan, what the ACTUAL FUCK are you doing? You are the largest CTF, period. And our system works better than yours...
 
 Total cost: $0 (Cloudflare free tier + a computer that was already running).
 
