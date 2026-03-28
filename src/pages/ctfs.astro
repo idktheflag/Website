@@ -5,7 +5,14 @@ import Layout from '../layouts/Layout.astro';
 const posts = await getCollection('blog');
 
 const ctfs = [
-    
+    {
+        name: 'Lockheed CyberQuest',
+        place: '1st & 2nd',
+        ctfPoints: '5230 / 5050',
+        ratingPoints: null,
+        writeups: [],
+        note: 'riverxia 1st (full solve), nila 2nd',
+    },
     {
         name: 'MetaCTF March 2026 Flash CTF',
         place: '12th & 13th (full solve)',
@@ -13,8 +20,8 @@ const ctfs = [
         ratingPoints: null,
         writeups: ['whiterabbit-writeup', 'brandkit-studio-writeup'],
         note: 'Individual',
-	},
-	{
+    },
+    {
         name: 'picoCTF 2026',
         place: '14th HS / 35th Global (full solve)',
         ctfPoints: 14500,
