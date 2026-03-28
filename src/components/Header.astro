@@ -30,8 +30,60 @@
                 </svg>
             </a>
         </div>
+        <button id="hamburger" class="hamburger" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </nav>
+    <div id="mobile-menu" class="mobile-menu">
+        <a href="/">Home</a>
+        <a href="/blog">Blog</a>
+        <a href="/ctfs">CTFs</a>
+        <a href="https://docs.idktheflag.sh">Docs</a>
+        <a href="/about">About</a>
+        <a href="/team">Bios</a>
+        <div class="mobile-menu-bottom">
+            <button id="terminal-toggle-mobile" aria-label="Toggle Terminal">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="4 17 10 11 4 5"></polyline>
+                    <line x1="12" y1="19" x2="20" y2="19"></line>
+                </svg>
+                Terminal
+            </button>
+            <a href="https://github.com/idktheflag" target="_blank">GitHub</a>
+        </div>
+    </div>
 </header>
+
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('open');
+        mobileMenu.classList.toggle('open');
+    });
+
+    // Close menu on link click
+    mobileMenu.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+            hamburger.classList.remove('open');
+            mobileMenu.classList.remove('open');
+        });
+    });
+
+    // Mobile terminal toggle
+    const termToggleMobile = document.getElementById('terminal-toggle-mobile');
+    if (termToggleMobile) {
+        termToggleMobile.addEventListener('click', () => {
+            hamburger.classList.remove('open');
+            mobileMenu.classList.remove('open');
+            document.getElementById('terminal-overlay')?.classList.remove('terminal-hidden');
+            document.getElementById('terminal-input')?.focus();
+        });
+    }
+</script>
 
 <style>
     header {
@@ -39,8 +91,9 @@
         padding: 0 1.5em;
         background: var(--bg-color);
         border-bottom: 2px solid var(--accent);
+        position: relative;
     }
-    
+
     nav {
         display: flex;
         align-items: center;
@@ -50,11 +103,10 @@
         margin: 0 auto;
     }
 
-    /* Flex: 1 forces the left and right sides to take equal space, perfectly centering the middle */
     h2 {
         margin: 0;
         font-size: 1.2em;
-        flex: 1; 
+        flex: 1;
         display: flex;
         justify-content: flex-start;
     }
@@ -85,7 +137,7 @@
     .nav-logo {
         height: 1.5em;
         width: auto;
-        image-rendering: pixelated; /* Preserves the MS Paint glory */
+        image-rendering: pixelated;
     }
 
     .social-links {
@@ -125,8 +177,98 @@
         border-width: 0;
     }
 
+    /* Hamburger button */
+    .hamburger {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.4em;
+        z-index: 1001;
+    }
+
+    .hamburger span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: var(--text-heading);
+        transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .hamburger.open span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger.open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.open span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* Mobile menu */
+    .mobile-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bg-color);
+        border-bottom: 2px solid var(--accent);
+        padding: 1rem 1.5rem;
+        z-index: 1000;
+    }
+
+    .mobile-menu a {
+        color: var(--text-heading);
+        font-weight: 700;
+        text-decoration: none;
+        padding: 0.7rem 0;
+        border-bottom: 1px solid #21262d;
+        transition: color 0.2s ease;
+    }
+
+    .mobile-menu a:hover {
+        color: var(--accent);
+    }
+
+    .mobile-menu-bottom {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        padding-top: 0.8rem;
+        margin-top: 0.3rem;
+    }
+
+    .mobile-menu-bottom button {
+        background: none;
+        border: 1px solid #30363d;
+        color: var(--text-heading);
+        cursor: pointer;
+        padding: 0.4em 0.7em;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        gap: 0.4em;
+        font-family: inherit;
+        font-size: 0.9em;
+        font-weight: 700;
+    }
+
+    .mobile-menu-bottom a {
+        border-bottom: none;
+        padding: 0;
+    }
+
     @media (max-width: 720px) {
+        .internal-links { display: none; }
         .social-links { display: none; }
-        h2 { flex: none; }
+        .hamburger { display: flex; }
+        .mobile-menu.open { display: flex; }
     }
 </style>

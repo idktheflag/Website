@@ -122,4 +122,25 @@ import Layout from '../layouts/Layout.astro';
         object-fit: cover;
         flex-shrink: 0;
     }
+
+    @media (max-width: 720px) {
+        .contact-list li {
+            font-size: 0.85em;
+            word-break: break-word;
+        }
+
+        .roster-list li {
+            font-size: 0.9em;
+            flex-wrap: nowrap;
+        }
+
+        .roster-pfp {
+            width: 28px;
+            height: 28px;
+        }
+
+        .prose p {
+            font-size: 1em;
+        }
+    }
 </style>

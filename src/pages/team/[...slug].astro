@@ -195,6 +195,26 @@ const { name, nicknames, pfp, role, specialties, hobbies, socials, active, statu
         color: var(--accent);
         text-decoration: none;
     }
+
+    @media (max-width: 720px) {
+        .profile-header {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .profile-pfp {
+            width: 100px;
+            height: 100px;
+        }
+
+        .profile-identity h1 {
+            font-size: 1.6rem;
+        }
+
+        .tags {
+            justify-content: center;
+        }
+    }
 </style>
 
 <script>

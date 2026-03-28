@@ -108,11 +108,11 @@ function getWriteupPosts(writeupIds: string[]) {
                         const writeupPosts = getWriteupPosts(ctf.writeups);
                         return (
                             <tr>
-                                <td class="place">{typeof ctf.place === 'number' ? `#${ctf.place}` : ctf.place}</td>
-                                <td class="event">{ctf.name}{ctf.note && <span class="note"> ({ctf.note})</span>}</td>
-                                <td>{ctf.ctfPoints !== null ? ctf.ctfPoints.toLocaleString() : '-'}</td>
-                                <td>{ctf.ratingPoints !== null ? ctf.ratingPoints : '-'}</td>
-                                <td class="writeups-cell">
+                                <td class="place" data-label="Place: ">{typeof ctf.place === 'number' ? `#${ctf.place}` : ctf.place}</td>
+                                <td class="event" data-label="">{ctf.name}{ctf.note && <span class="note"> ({ctf.note})</span>}</td>
+                                <td data-label="CTF Points: ">{ctf.ctfPoints !== null ? ctf.ctfPoints.toLocaleString() : <span class="no-writeup">-</span>}</td>
+                                <td data-label="Rating: ">{ctf.ratingPoints !== null ? ctf.ratingPoints : <span class="no-writeup">-</span>}</td>
+                                <td class={`writeups-cell ${writeupPosts.length === 0 ? 'empty' : ''}`} data-label="Writeups: ">
                                     {writeupPosts.length > 0 ? (
                                         writeupPosts.map(p => (
                                             <a href={`/blog/${p!.id}/`}>{p!.data.title}</a>
@@ -132,7 +132,7 @@ function getWriteupPosts(writeupIds: string[]) {
 
 <style>
     .container {
-        max-width: 900px;
+        max-width: 1100px;
         margin: 0 auto;
         padding: 2rem 1rem;
     }
@@ -192,11 +192,13 @@ function getWriteupPosts(writeupIds: string[]) {
         color: var(--accent);
         font-size: 0.85em;
         text-transform: uppercase;
+        white-space: nowrap;
     }
 
     .ctf-table td {
         padding: 0.6rem 0.8rem;
         border-bottom: 1px solid #21262d;
+        white-space: nowrap;
     }
 
     .ctf-table tr:hover td {
@@ -206,11 +208,17 @@ function getWriteupPosts(writeupIds: string[]) {
     .place {
         color: var(--accent);
         font-weight: bold;
+        white-space: nowrap;
     }
 
     .event {
         font-weight: bold;
         color: var(--text-heading);
+        white-space: nowrap;
+    }
+
+    .writeups-cell {
+        white-space: normal;
     }
 
     .writeups-cell a {
@@ -226,5 +234,56 @@ function getWriteupPosts(writeupIds: string[]) {
         color: #8b949e;
         font-size: 0.85em;
         font-weight: normal;
+    }
+
+    @media (max-width: 720px) {
+        .stats-bar {
+            gap: 1rem;
+        }
+
+        .stat-value {
+            font-size: 1.1em;
+        }
+
+        .ctf-table thead {
+            display: none;
+        }
+
+        .ctf-table,
+        .ctf-table tbody,
+        .ctf-table tr,
+        .ctf-table td {
+            display: block;
+        }
+
+        .ctf-table tr {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #21262d;
+        }
+
+        .ctf-table td {
+            padding: 0.15rem 0;
+            border: none;
+        }
+
+        .ctf-table td::before {
+            content: attr(data-label);
+            font-size: 0.8em;
+            color: #8b949e;
+        }
+
+        .event {
+            font-size: 1.05em;
+            margin-bottom: 0.15rem;
+            order: -1;
+        }
+
+        .writeups-cell.empty {
+            display: none;
+        }
+
+        .no-writeup {
+            display: none;
+        }
     }
 </style>

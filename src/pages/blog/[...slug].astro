@@ -121,4 +121,21 @@ const authors = Array.isArray(post.data.author) ? post.data.author : [post.data.
         padding: 0;
         border: none;
     }
+
+    .markdown-content :global(table) {
+        width: 100%;
+        overflow-x: auto;
+        display: block;
+    }
+
+    @media (max-width: 720px) {
+        .writeup {
+            padding: 1.5rem 0.8rem;
+        }
+
+        .markdown-content :global(pre) {
+            font-size: 0.85em;
+            padding: 0.7rem;
+        }
+    }
 </style>
