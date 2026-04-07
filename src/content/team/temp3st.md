@@ -14,7 +14,7 @@ active: true
 order: 7
 ---
 
-*This bio was auto-generated from [temp3st's website](https://temp3st.vercel.app/) and not written by them.*
+*This bio was auto-generated from [temp3st's website](https://temp3st.vercel.app/) and not written by them.* {they're kidding, they wrote this since then but i'm leaving this line bc funny - river}
 
 17-year-old cybersec enthusiast out of the Bay Area. CompTIA Security+ certified and currently grinding through OSCP (~75% done). Specializes in penetration testing, web exploitation, and Active Directory.
 
