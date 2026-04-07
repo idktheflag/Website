@@ -4,7 +4,7 @@ nicknames: ['Spectro', 'DrkNyte454']
 pfp: /pfps/temp3st.png
 role: Member
 specialties: ['pentesting', 'active directory', 'linux exploitation']
-hobbies: ['ricing hyprland', 'chasing OSCP']
+hobbies: ['ricing hyprland', 'OSCP candidate']
 socials:
   - name: Website
     url: https://temp3st.vercel.app/
@@ -16,8 +16,7 @@ order: 7
 
 *This bio was auto-generated from [temp3st's website](https://temp3st.vercel.app/) and not written by them.*
 
-17-year-old cybersec enthusiast out of the Bay Area. CompTIA Security+ certified and currently grinding through OSCP (~75% done). Specializes in penetration testing — the manual kind, not the "run a scanner and pray" kind.
+17-year-old cybersec enthusiast out of the Bay Area. CompTIA Security+ certified and currently grinding through OSCP (~75% done). Specializes in penetration testing, web exploitation, and Active Directory.
 
-Has a thing for Active Directory domination: null sessions, Kerberoasting, pass-the-hash, the whole chain from foothold to Domain Admin. Lab writeups on TryHackMe and OffSec Proving Grounds speak for themselves.
-
-When not popping shells, probably ricing an Arch + Hyprland setup with Tokyo Night theme and way too many Waybar modules.
+Rooted over 50 machines (Important machine writeups can be found on website)
+When not doing machines, probably ricing an Arch + Hyprland setup with a lot of claude + non existent braincells.
