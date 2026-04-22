@@ -6,8 +6,8 @@ role: Member
 specialties: ['general']
 hobbies: []
 socials: []
-active: true
-status: semi-active
+active: false
+status: retired
 ---
 
 general
