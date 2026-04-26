@@ -1,0 +1,83 @@
+export const ctfStats = {
+    overallPlace: 370,
+    countryPlace: 36,
+    ratingPoints: 95.883,
+    year: 2026,
+};
+
+export const ctfs = [
+    {
+        name: 'UMassCTF 2026',
+        place: 176,
+        ctfPoints: 1800,
+        ratingPoints: 24.766,
+        writeups: [],
+    },
+    {
+        name: 'SillyCTF 2',
+        place: 23,
+        ctfPoints: 4720,
+        ratingPoints: 13.486,
+        writeups: [],
+    },
+    {
+        name: 'RITSEC CTF 2026',
+        place: 75,
+        ctfPoints: 1511,
+        ratingPoints: 12.004,
+        writeups: [],
+        note: '7th Academic Division',
+    },
+    {
+        name: 'Lockheed CyberQuest',
+        place: '1st & 2nd',
+        ctfPoints: '5230 / 5050',
+        ratingPoints: null,
+        writeups: [],
+        note: 'riverxia 1st (full solve), nila 2nd',
+    },
+    {
+        name: 'MetaCTF March 2026 Flash CTF',
+        place: '12th & 13th (full solve)',
+        ctfPoints: 1050,
+        ratingPoints: null,
+        writeups: ['whiterabbit-writeup', 'brandkit-studio-writeup'],
+        note: 'Individual',
+    },
+    {
+        name: 'picoCTF 2026',
+        place: '14th HS / 35th Global (full solve)',
+        ctfPoints: 14500,
+        ratingPoints: null,
+        writeups: ['paper-2-writeup'],
+        note: 'Not on CTFtime',
+    },
+    {
+        name: '0xFUN CTF 2026',
+        place: 72,
+        ctfPoints: 7291,
+        ratingPoints: 7.088,
+        writeups: [],
+    },
+    {
+        name: 'LA CTF 2026',
+        place: 150,
+        ctfPoints: 2871,
+        ratingPoints: 19.276,
+        writeups: [],
+    },
+    {
+        name: 'Pragyan CTF 2026',
+        place: 335,
+        ctfPoints: 450,
+        ratingPoints: 0.128,
+        writeups: [],
+    },
+    {
+        name: 'PascalCTF 2026',
+        place: 134,
+        ctfPoints: 4705,
+        ratingPoints: 15.394,
+        writeups: [],
+    },
+];

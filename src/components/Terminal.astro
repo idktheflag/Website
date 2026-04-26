@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import { ctfs, ctfStats } from '../data/ctfs';
 
 const teamMembers = await getCollection('team');
 const blogPosts = await getCollection('blog');
@@ -17,6 +18,14 @@ const blogData = blogPosts.map(p => ({
     title: p.data.title,
     date: p.data.pubDate.toLocaleDateString(),
     author: p.data.author,
+}));
+
+const ctfData = ctfs.map(c => ({
+    name: c.name,
+    place: c.place,
+    ctfPoints: c.ctfPoints,
+    ratingPoints: c.ratingPoints,
+    note: c.note || null,
 }));
 ---
 
@@ -41,7 +50,7 @@ const blogData = blogPosts.map(p => ({
     </div>
 </div>
 
-<script define:vars={{ teamData, blogData }}>
+<script define:vars={{ teamData, blogData, ctfData, ctfStats }}>
 (function() {
     // Virtual filesystem
     const fs = {
@@ -93,20 +102,20 @@ const blogData = blogPosts.map(p => ({
         '/ctfs/results.txt': {
             type: 'file',
             content: [
-                '=== idktheflag CTF Results (2026) ===',
+                `=== idktheflag CTF Results (${ctfStats.year}) ===`,
                 '',
-                'Overall Rating: #576 (41.885 pts)',
-                'Country (US): #44',
+                `Overall Rating: #${ctfStats.overallPlace} (${ctfStats.ratingPoints} pts)`,
+                `Country (US): #${ctfStats.countryPlace}`,
                 '',
-                'Place            | Event              | CTF Pts  | Rating Pts',
-                '-----------------|--------------------|---------|-----------',
-                '1st & 2nd       | Lockheed CyberQuest     | 5230/5050 | -  (riverxia 1st, nila 2nd)',
-                '12th & 13th     | MetaCTF Mar 2026 Flash  | 1,050    | -  (individual, full solve)',
-                '14th HS/35th Glb | picoCTF 2026            | 14,500   | -  (full solve, not on CTFtime)',
-                '#72              | 0xFUN CTF 2026          | 7,291    | 7.088',
-                '#150             | LA CTF 2026             | 2,871    | 19.276',
-                '#335             | Pragyan CTF 2026        | 450      | 0.128',
-                '#134             | PascalCTF 2026          | 4,705    | 15.394',
+                'Place            | Event                   | CTF Pts   | Rating Pts',
+                '-----------------|-------------------------|-----------|-----------',
+                ...ctfData.map(c => {
+                    const place = typeof c.place === 'number' ? `#${c.place}` : c.place;
+                    const pts = typeof c.ctfPoints === 'number' ? c.ctfPoints.toLocaleString() : c.ctfPoints;
+                    const rating = c.ratingPoints != null ? c.ratingPoints : '-';
+                    const note = c.note ? `  (${c.note})` : '';
+                    return `${place.toString().padEnd(17)}| ${c.name.padEnd(24)}| ${pts.toString().padEnd(10)}| ${rating}${note}`;
+                }),
             ].join('\n'),
         },
     };
