@@ -1,11 +1,18 @@
 export const ctfStats = {
-    overallPlace: 370,
-    countryPlace: 36,
-    ratingPoints: 95.883,
+    overallPlace: 306,
+    countryPlace: 28,
+    ratingPoints: 125.988,
     year: 2026,
 };
 
 export const ctfs = [
+    {
+        name: 'UMDCTF 2026',
+        place: 102,
+        ctfPoints: 1399,
+        ratingPoints: 30.105,
+        writeups: [],
+    },
     {
         name: 'UMassCTF 2026',
         place: 176,
