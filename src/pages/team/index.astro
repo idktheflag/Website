@@ -3,8 +3,9 @@ import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 
 const members = await getCollection('team');
-const active = members.filter(m => m.data.status === 'active').sort((a, b) => a.data.order - b.data.order);
-const semiActive = members.filter(m => m.data.status === 'semi-active').sort((a, b) => a.data.order - b.data.order);
+const active = members.filter(m => m.data.status === 'active' && m.data.team === 'idktheflag').sort((a, b) => a.data.order - b.data.order);
+const difference = members.filter(m => m.data.team === 'Difference').sort((a, b) => a.data.order - b.data.order);
+const semiActive = members.filter(m => m.data.status === 'semi-active' && m.data.team === 'idktheflag').sort((a, b) => a.data.order - b.data.order);
 const retired = members.filter(m => m.data.status === 'retired').sort((a, b) => a.data.order - b.data.order);
 ---
 
@@ -29,6 +30,27 @@ const retired = members.filter(m => m.data.status === 'retired').sort((a, b) => 
                     </a>
                 ))}
             </div>
+
+            {difference.length > 0 && (
+                <>
+                    <h2>Difference</h2>
+                    <p class="section-note">different team, fully included in idktheflag</p>
+                    <div class="member-grid">
+                        {difference.map(m => (
+                            <a href={`/team/${m.id}`} class="member-card">
+                                <img src={m.data.pfp} alt={m.data.name} class="member-pfp" />
+                                <div class="member-info">
+                                    <strong>{m.data.name}</strong>
+                                    <span class="member-role">{m.data.role}</span>
+                                    {m.data.specialties.length > 0 && (
+                                        <span class="member-specs">{m.data.specialties.join(', ')}</span>
+                                    )}
+                                </div>
+                            </a>
+                        ))}
+                    </div>
+                </>
+            )}
 
             {semiActive.length > 0 && (
                 <>
@@ -89,6 +111,14 @@ const retired = members.filter(m => m.data.status === 'retired').sort((a, b) => 
     h2 {
         color: var(--text-heading);
         margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .section-note {
+        color: #8b949e;
+        font-style: italic;
+        font-size: 0.9em;
+        margin-top: -0.5rem;
         margin-bottom: 1rem;
     }
 

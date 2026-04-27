@@ -20,3 +20,5 @@ Hey, I'm Shalin (nila). I'm interested in cybersecurity and business. See some o
 - Top 11th National Cyber League (Experienced Division)
 - Top 33 - US Cyber Games Competitive CTF (Individual)
 Right now I'm looking forward to continue to compete and increase my knowledge through cybersecurity certifications (currently persuing eJPT). Feel free to connect with me on LinkedIn and GitHub!
+
+fun fact: nila can't spell (once asked claude how to spell "string") — *added by river*
