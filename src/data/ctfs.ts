@@ -7,6 +7,14 @@ export const ctfStats = {
 
 export const ctfs = [
     {
+        name: 'National Cyber League',
+        place: '5th Overall / 1st HS',
+        ctfPoints: null,
+        ratingPoints: null,
+        writeups: [],
+        note: 'Not on CTFtime',
+    },
+    {
         name: 'UMDCTF 2026',
         place: 102,
         ctfPoints: 1399,
