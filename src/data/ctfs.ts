@@ -1,7 +1,7 @@
 export const ctfStats = {
-    overallPlace: 283,
-    countryPlace: 24,
-    ratingPoints: 139.105,
+    overallPlace: 211,
+    countryPlace: 20,
+    ratingPoints: 175.013,
     year: 2026,
 };
 
@@ -13,6 +13,13 @@ export const ctfs = [
         ratingPoints: null,
         writeups: [],
         note: 'Not on CTFtime',
+    },
+    {
+        name: 'TJCTF 2026',
+        place: 94,
+        ctfPoints: 8532,
+        ratingPoints: 36.767,
+        writeups: [],
     },
     {
         name: 'From Dusk Till Dawn Quals',
