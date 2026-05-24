@@ -1,112 +1,58 @@
-export const ctfStats = {
-    overallPlace: 211,
-    countryPlace: 20,
-    ratingPoints: 175.013,
-    year: 2026,
-};
+export const TEAM_ID = 419270;
+export const CTFTIME_YEAR = '2026';
 
-export const ctfs = [
-    {
-        name: 'TJCTF 2026',
-        place: 94,
-        ctfPoints: 8532,
-        ratingPoints: 36.767,
-        writeups: [],
-    },
-    {
-        name: 'From Dusk Till Dawn Quals',
-        place: 26,
-        ctfPoints: 1273,
-        ratingPoints: 13.245,
-        writeups: [],
-    },
-    {
-        name: 'UMDCTF 2026',
-        place: 102,
-        ctfPoints: 1399,
-        ratingPoints: 30.105,
-        writeups: [],
-    },
-    {
-        name: 'UMassCTF 2026',
-        place: 176,
-        ctfPoints: 1800,
-        ratingPoints: 24.766,
-        writeups: [],
-    },
+// Events NOT on CTFtime — manually defined with a sortDate so they
+// appear in the right chronological position relative to CTFtime events.
+export const manualCtfs = [
     {
         name: 'National Cyber League',
+        sortDate: new Date('2026-04-12'),
         place: '5th Overall / 1st HS',
-        ctfPoints: null,
-        ratingPoints: null,
-        writeups: [],
+        ctfPoints: null as number | string | null,
+        writeups: [] as string[],
         note: 'Not on CTFtime',
     },
     {
-        name: 'SillyCTF 2',
-        place: 23,
-        ctfPoints: 4720,
-        ratingPoints: 13.486,
-        writeups: [],
-    },
-    {
-        name: 'RITSEC CTF 2026',
-        place: 75,
-        ctfPoints: 1511,
-        ratingPoints: 12.004,
-        writeups: [],
-        note: '7th Academic Division',
-    },
-    {
         name: 'Lockheed CyberQuest',
+        sortDate: new Date('2026-03-22'),
         place: '1st & 2nd',
-        ctfPoints: '5230 / 5050',
-        ratingPoints: null,
-        writeups: [],
+        ctfPoints: '5230 / 5050' as number | string | null,
+        writeups: [] as string[],
         note: 'riverxia 1st (full solve), nila 2nd',
     },
     {
         name: 'MetaCTF March 2026 Flash CTF',
+        sortDate: new Date('2026-03-20'),
         place: '12th & 13th (full solve)',
-        ctfPoints: 1050,
-        ratingPoints: null,
+        ctfPoints: 1050 as number | string | null,
         writeups: ['whiterabbit-writeup', 'brandkit-studio-writeup'],
         note: 'Individual',
     },
     {
         name: 'picoCTF 2026',
+        sortDate: new Date('2026-03-14'),
         place: '14th HS / 35th Global (full solve)',
-        ctfPoints: 14500,
-        ratingPoints: null,
+        ctfPoints: 14500 as number | string | null,
         writeups: ['paper-2-writeup'],
         note: 'Not on CTFtime',
     },
-    {
-        name: '0xFUN CTF 2026',
-        place: 72,
-        ctfPoints: 7291,
-        ratingPoints: 7.088,
-        writeups: [],
-    },
-    {
-        name: 'LA CTF 2026',
-        place: 150,
-        ctfPoints: 2871,
-        ratingPoints: 19.276,
-        writeups: [],
-    },
-    {
-        name: 'Pragyan CTF 2026',
-        place: 335,
-        ctfPoints: 450,
-        ratingPoints: 0.128,
-        writeups: [],
-    },
-    {
-        name: 'PascalCTF 2026',
-        place: 134,
-        ctfPoints: 4705,
-        ratingPoints: 15.394,
-        writeups: [],
-    },
 ];
+
+// Per-event overrides for CTFtime events.
+// Add ratingPoints, notes, or writeups here for any CTFtime event.
+export const ctfOverrides: Record<string, {
+    ratingPoints?: number;
+    note?: string;
+    writeups?: string[];
+}> = {
+    'TJCTF 2026':               { ratingPoints: 36.767 },
+    'From Dusk Till Dawn Quals': { ratingPoints: 13.245 },
+    'UMDCTF 2026':              { ratingPoints: 30.105 },
+    'UMassCTF 2026':            { ratingPoints: 24.766 },
+    'SillyCTF 2':               { ratingPoints: 13.486 },
+    'RITSEC CTF 2026':          { ratingPoints: 12.004, note: '7th Academic Division' },
+    '0xFUN CTF 2026':           { ratingPoints: 7.088 },
+    'LA CTF 2026':              { ratingPoints: 19.276 },
+    'Pragyan CTF 2026':         { ratingPoints: 0.128 },
+    'PascalCTF 2026':           { ratingPoints: 15.394 },
+};

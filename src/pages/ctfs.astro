@@ -1,9 +1,10 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
-import { ctfs, ctfStats } from '../data/ctfs';
+import { fetchCtfData } from '../utils/ctftime';
 
 const posts = await getCollection('blog');
+const { ctfs, stats: ctfStats } = await fetchCtfData();
 
 // Resolve writeup posts
 function getWriteupPosts(writeupIds: string[]) {
