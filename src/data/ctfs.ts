@@ -46,7 +46,7 @@ export const ctfOverrides: Record<string, {
     writeups?: string[];
 }> = {
     'TJCTF 2026':               { ratingPoints: 36.767 },
-    'From Dusk Till Dawn Quals': { ratingPoints: 13.245 },
+    'From Dusk Till Dawn Quals': { ratingPoints: 13.245, writeups: ['dusk-till-dawn-2026'] },
     'UMDCTF 2026':              { ratingPoints: 30.105 },
     'UMassCTF 2026':            { ratingPoints: 24.766 },
     'SillyCTF 2':               { ratingPoints: 13.486 },
