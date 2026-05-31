@@ -5,15 +5,22 @@ import Layout from '../../layouts/Layout.astro';
 export async function getStaticPaths() {
     const posts = await getCollection('blog');
     return posts.map(post => ({
-        params: { slug: post.id }, // Use post.id here
+        params: { slug: post.id },
         props: { post },
     }));
 }
 
 const { post } = Astro.props;
-// ASTRO 5 RENDERING METHOD
 const { Content } = await render(post);
-const authors = Array.isArray(post.data.author) ? post.data.author : [post.data.author];
+
+const teamMembers = await getCollection('team');
+const pfpMap = Object.fromEntries(teamMembers.map(m => [m.id, m.data.pfp]));
+
+const authorIds = Array.isArray(post.data.author) ? post.data.author : [post.data.author];
+const authors = authorIds.map(id => ({
+    id,
+    pfp: pfpMap[id] ?? null,
+}));
 ---
 
 <Layout title={`${post.data.title} | idktheflag`}>
@@ -22,11 +29,11 @@ const authors = Array.isArray(post.data.author) ? post.data.author : [post.data.
             <h1>{post.data.title}</h1>
             <div class="meta">
                 <div class="meta-authors">
-                    {authors.map(name => (
-						<div class="author">
-							<span>Author:</span>
-                            <img src={`/pfps/${name.toLowerCase()}.png`} alt={name} class="author-pfp" />
-                            <span>{name}</span>
+                    <span>{authors.length > 1 ? 'Authors:' : 'Author:'}</span>
+                    {authors.map(({ id, pfp }) => (
+                        <div class="author">
+                            {pfp && <img src={pfp} alt={id} class="author-pfp" />}
+                            <a href={`/team/${id}`}>{id}</a>
                         </div>
                     ))}
                 </div>
@@ -69,13 +76,22 @@ const authors = Array.isArray(post.data.author) ? post.data.author : [post.data.
         display: flex;
         flex-direction: column;
         gap: 0.4rem;
+        color: var(--accent);
+    }
+
+    .meta-authors a {
+        color: var(--accent);
+        text-decoration: none;
+    }
+
+    .meta-authors a:hover {
+        text-decoration: underline;
     }
 
     .author {
         display: flex;
         align-items: center;
         gap: 0.5rem;
-        color: var(--accent);
     }
 
     .author-pfp {
