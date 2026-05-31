@@ -5,11 +5,11 @@ pubDate: '2026-03-26'
 author: 'riverxia'
 ---
 
-# The Challenge
+# white rabbit
 
-**White Rabbit** from MetaCTF. We're given `whiterabbit.pdf` (418,224 bytes) and a prompt about hackers whispering secret codes to get into a room. Despite the `.pdf` extension, the file doesn't open as a PDF.
+metactf. we get `whiterabbit.pdf` (418,224 bytes). doesn't open as a pdf.
 
-## Step 1 — Not a real PDF
+## not a pdf
 
 ```bash
 $ file whiterabbit.pdf
@@ -21,11 +21,11 @@ $ xxd whiterabbit.pdf | head -3
 00000020: 621b 200a 400d 001b 0f39 4c3c 181d 5243  b. .@....9L<..RC
 ```
 
-No `%PDF` magic bytes. The file is encrypted/obfuscated.
+no `%PDF` magic bytes. encrypted with something.
 
-## Step 2 — Known-plaintext XOR crib
+## known-plaintext xor crib
 
-Since the file *should* be a PDF, we know the first 7 bytes of plaintext are `%PDF-1.` (0x255044462d312e). XOR the ciphertext with this known plaintext to recover the first 7 key bytes:
+it's supposed to be a pdf, so the first 7 bytes are `%PDF-1.` (0x255044462d312e). xor ciphertext with that:
 
 ```python
 data = open('whiterabbit.pdf', 'rb').read()
@@ -33,23 +33,21 @@ key_fragment = bytes(a ^ b for a, b in zip(data[:7], b'%PDF-1.'))
 print(key_fragment)  # b'h4ck4ll'
 ```
 
-Key starts with **`h4ck4ll`** ("hack all" in leet).
+key starts with `h4ck4ll`. ok.
 
-## Step 3 — Finding the key length
+## key length
 
-Index of Coincidence analysis across different key lengths shows a clear spike at **length 16** (IC = 0.00545 vs ~0.004 baseline). Kasiski examination confirms: trigram distance GCDs overwhelmingly favor powers of 2, peaking at 16.
+index of coincidence spikes hard at length 16 (IC = 0.00545 vs ~0.004 baseline). kasiski says the same thing. 16 bytes.
 
-## Step 4 — Recovering the full key
+## recovering the full key
 
-With a 16-byte repeating XOR key and the first 7 bytes known, I needed the remaining 9.
+7 bytes down, 9 to go.
 
-**Byte 7 (PDF version):** Trying each PDF version (1.0–1.9), `%PDF-1.4` gives `key[7] = 't'`, extending the key to `h4ck4llt`.
+- byte 7: try each pdf version. `%PDF-1.4` gives `key[7] = 't'` → `h4ck4llt`
+- bytes 8-9: guess "th3" for "the" → decrypts to valid pdf structure. confirmed `key[8:10] = 'h3'`
+- bytes 10-15: cross-reference known pdf keywords at different offsets
 
-**Bytes 8–9:** Decrypting with `h4ck4llth3......` (guessing "th3" for "the") produced valid PDF structure (`endobj`, `/Type`, etc.) at offsets whose key positions fell within 0–9. This confirmed `key[8:10] = 'h3'`.
-
-**Bytes 10–15:** Cross-referencing known PDF keywords at multiple offsets:
-
-| Offset | Decrypted | Expected | Key pos | Diff |
+| offset | decrypted | expected | key pos | diff |
 |--------|-----------|----------|---------|------|
 | 266 | `v` | `a` (/Pages) | 10 | 0x17 |
 | 407322 | `x` | `o` (/Font) | 10 | 0x17 |
@@ -57,9 +55,9 @@ With a 16-byte repeating XOR key and the first 7 bytes known, I needed the remai
 | 407323 | `t` | `n` (/Font) | 11 | 0x1A |
 | 268 | `-` | `e` (/Pages) | 12 | 0x48 |
 
-The consistent diffs across independent offsets confirmed the corrections. Applying them: `key[10:13] = 'cry'`.
+consistent diffs across independent offsets → `key[10:13] = 'cry'`
 
-The partial key `h4ck4llth3cry...` strongly suggests **"hack all the crypto"** in leet. Testing `h4ck4llth3cryp70` (with `p70` for "pto"):
+at this point the key is `h4ck4llth3cry...` which is obviously "hack all the crypto" in leet. so `h4ck4llth3cryp70`:
 
 ```python
 key = b'h4ck4llth3cryp70'
@@ -69,9 +67,9 @@ print(dec.count(b'/Pages'))  # 2
 print(dec.count(b'endobj'))  # 33
 ```
 
-Valid PDF structure everywhere.
+valid pdf. gg.
 
-## Step 5 — Flag
+## flag
 
 ```bash
 $ pdftotext decrypted.pdf -
@@ -85,7 +83,7 @@ Knock twice and whisper
 MetaCTF{1n_th3_d00r_v1a_x0r}
 ```
 
-## Solve script
+## solve script
 
 ```python
 #!/usr/bin/env python3
@@ -94,9 +92,3 @@ key = b'h4ck4llth3cryp70'
 dec = bytes(data[i] ^ key[i % 16] for i in range(len(data)))
 open('decrypted.pdf', 'wb').write(dec)
 ```
-
-## Key takeaways
-
-- Repeating-key XOR is trivially broken with known plaintext (PDF headers are a goldmine)
-- Cross-referencing multiple known PDF structure keywords at different offsets locks in each key byte independently
-- The key `h4ck4llth3cryp70` = "hack all the crypto" — fitting
