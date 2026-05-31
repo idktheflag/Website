@@ -6,8 +6,8 @@ role: Member
 specialties: ['lwk saving us on koth']
 hobbies: []
 socials: []
-active: true
-status: active
+active: false
+status: retired
 ---
 
 king of the koth - *added by river*
