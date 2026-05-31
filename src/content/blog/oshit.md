@@ -8,12 +8,12 @@ author: ['riverxia', 'n1m5n', 'ch1v4lry']
 
 i say! hey! hey! hey! hey! start dash!
 
-start`https://x.com/mrfellasmart`
+start [x.com/mrfellasmart](https://x.com/mrfellasmart)
 tweet where first letter of each word - next lead (reddit username)
 
-`https://www.reddit.com/user/nikolai_tankman/`->reddit profile bio has a yt channel id
+[reddit.com/user/nikolai_tankman](https://www.reddit.com/user/nikolai_tankman/) -> reddit profile bio has a yt channel id
 
-`https://www.youtube.com/channel/UCzLAwam-FUPAnNyX6cLcPdQ`
+[youtube channel](https://www.youtube.com/channel/UCzLAwam-FUPAnNyX6cLcPdQ)
 in the video transcript, a hidden pastbin link, encoded:
 
 71etnufhx/h/zbp.avorgfnc//:fcggu
@@ -32,8 +32,8 @@ brainfuck
 ```
 ++++++++++[>+>+++>+++++++>++++++++++<<<<-]>>>>+++++++++....+++++++++.-----------------.+++++++++++++.+++++++.<+++++++++++++.++++++++++++++++++.--.>----.---.<++.-.>--.<---.>+++..++++.--------.+++.<+++.<++++++++++++++++++++++++.+.
 ```
-when run->`mmmmverySecuredpassword67`
-One of the pastes (`https://pastebin.com/Zw4jfeCr`) 
+when run -> `mmmmverySecuredpassword67`
+one of the pastes ([pastebin.com/Zw4jfeCr](https://pastebin.com/Zw4jfeCr))
 unlocks with that 
 ```
  𒁙𓁵𓈠𓅡慫𓄠陨ꍬ𖤠𓍯頠𒁨𓅯啥𒁴阠顣𒅥啴𓉩售鹆饮ꔠ𓅩陴驨鹮驭慭縠鴠陥饲鴠啥驲马𓅡饥𓄠ꕯ啥院鱮𓁥捳褠鹨啳驭𓅳鱡啥鹷ꍬ𓈠𓁥鹭陮驴鸠啮唵驳𒁣饮捳
@@ -42,7 +42,7 @@ base 65536->
 ```
 Your task, shall you choose to accept it. Find mistahenimem, I heard he released some bangers. This message will terminate in 5 seconds.
 ```
-https://soundcloud.com/mistahenimem
+[soundcloud.com/mistahenimem](https://soundcloud.com/mistahenimem)
 
 click on track->desc
 ```
@@ -60,7 +60,7 @@ While everyone else is tired of constantly supporting
 ```
 uncharted reference! crazy
 
-instagram: `https://www.instagram.com/elenaphisher`
+instagram: [instagram.com/elenaphisher](https://www.instagram.com/elenaphisher)
 spelled phisher instead of fisher (same as in decode)
 
 u actually need an insta account for this part
@@ -84,19 +84,19 @@ cyberchef autodetects as base58
 uggcf://qvfpbeq.tt/cls2PJ9MH
 ```
 rot13 again
-`https://discord.gg/pyf2CW9ZU`
+[discord.gg/pyf2CW9ZU](https://discord.gg/pyf2CW9ZU)
 description of channel #cool-cats
 `it2ru6.png` hidden between `||`'s
 cats->catbox.moe
-https://files.catbox.moe/it2ru6.png
+[files.catbox.moe/it2ru6.png](https://files.catbox.moe/it2ru6.png)
 
 
 easy geoguess on chivalry's part
-https://www.google.com/maps/place/43°03'41.5"N+131°54'20.2"E/@43.0465363,131.8868546,3a,75y,48.88h,78.86t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDymMaEtQE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FABJJf52CPLxmWX-5Rc8aYucDEMmZq9V9MSMDZP-1jL0k5oSIF5PUQ17km1_Nk9ifEQ0IRt9B_ad57nCWRFB6yLbdfqUWLn3mekxyAhmLrBi4DjkulgsPZ7K22wJcONPM8fK_QzGlPA9gFw%3Dw900-h600-k-no-pi11.135501475168667-ya48.884412114848246-ro0-fo100!7i4096!8i2048!4m4!3m3!8m2!3d43.061528!4d131.905611?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D\
+[google maps](https://www.google.com/maps/place/43°03'41.5"N+131°54'20.2"E/@43.0465363,131.8868546,3a,75y,48.88h,78.86t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDymMaEtQE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FABJJf52CPLxmWX-5Rc8aYucDEMmZq9V9MSMDZP-1jL0k5oSIF5PUQ17km1_Nk9ifEQ0IRt9B_ad57nCWRFB6yLbdfqUWLn3mekxyAhmLrBi4DjkulgsPZ7K22wJcONPM8fK_QzGlPA9gFw%3Dw900-h600-k-no-pi11.135501475168667-ya48.884412114848246-ro0-fo100!7i4096!8i2048!4m4!3m3!8m2!3d43.061528!4d131.905611?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D)
 or maybe it was pongo i dont remember
 
 taokyle post!
-https://maps.app.goo.gl/Nkegm7jK8pCaRHfZA
+[maps.app.goo.gl/Nkegm7jK8pCaRHfZA](https://maps.app.goo.gl/Nkegm7jK8pCaRHfZA)
 
 (in chinese)
 
@@ -116,14 +116,14 @@ Although I haven't personally visited this place, based on their capture-the-fla
 ```
 
 legendary acni pull:
-https://github.com/chloefreezer/whatisguthib
+[github.com/chloefreezer/whatisguthib](https://github.com/chloefreezer/whatisguthib)
 
 go into commit history, see: `227a927e3fc04ce3959a6031d1d5a01f` in one of the past commits
 this is a gist id, which my team knew from me giving them a gist chall in our in-house ctf and torturing naman with it
 
-(relevant commit: https://github.com/chloefreezer/whatisguthib/commit/ece6e12bd23a1c07b56641ff0be1693c173f4221)
+(relevant commit: [ece6e12](https://github.com/chloefreezer/whatisguthib/commit/ece6e12bd23a1c07b56641ff0be1693c173f4221))
 
-`https://gist.github.com/chloefreezer/227a927e3fc04ce3959a6031d1d5a01f`
+[gist.github.com/chloefreezer/227a927e...](https://gist.github.com/chloefreezer/227a927e3fc04ce3959a6031d1d5a01f)
 
 from base85, it's a wav file (morse code)
 morse decrypt: `TOOK YOUR SWEET TIME EH? CHECK OUT THIS DIRTY PRANK I PLAYED OUT WITH NATE XD. HE GOES BY NATHAN BRAKE ON THE INTERNET. HAVE FUN`
@@ -144,19 +144,18 @@ i love osint 🫩
 ```
 
 a second legendary acni pull
-`https://bsky.app/profile/nathanbrake.bsky.social`
+[bsky.app/profile/nathanbrake.bsky.social](https://bsky.app/profile/nathanbrake.bsky.social)
 one of the posts has `kt0hur3oyig1a27nyc` sticking out
 it took us a while to figure it out
 first we thought crypto (bc ncl suckz), then telegram (we were running out of ideas)
 then i thought "character.ai" (dont ask why i thought that)
-https://character.ai/chat/kt0hur3oyig1a27nyc
+[character.ai/chat/kt0hur3oyig1a27nyc](https://character.ai/chat/kt0hur3oyig1a27nyc)
 
 yeah that didn't work but it was on the right track, it made us THINK of ais
 
 then deepseek...
-https://chat.deepseek.com/share/kt0hur3oyig1a27nyc
+[chat.deepseek.com/share/kt0hur3oyig1a27nyc](https://chat.deepseek.com/share/kt0hur3oyig1a27nyc)
 
 yeah it was deepseek all along who would have thought
 
 `THEM?!CTF{unch4rt3d_r3f3r3nc35_1n_4n_051nt_ch4ll3ng3_c0z_why_n0t_xD?!_congratulations}`
-
