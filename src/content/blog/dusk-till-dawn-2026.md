@@ -5,7 +5,7 @@ pubDate: '2026-05-09'
 author: 'riverxia'
 ---
 
-# From Dusk Till Dawn 2026
+# from dusk till dawn 2026
 
 fibonhack/cyber saiyan's CTF. 24 hours of pure suffering. top 5 go to rome for finals (we didn't make it but we got close ok shut up). flag format: `DAJEROMA{...}` which is literally italian for "come on rome" lol.
 
@@ -13,7 +13,7 @@ we solved 16/22 challenges. here's writeups for the 6 we actually ground through
 
 ---
 
-## 4words — Crypto (65pts, 69 solves)
+## 4words — crypto (65pts, 69 solves)
 
 > "You have to be very fast"
 
@@ -31,7 +31,7 @@ seed fragment → brute 16 bits → verify on plaintext round 1 → predict all 
 
 ---
 
-## IntegrityCore — Pwn (75pts, 64 solves)
+## IntegrityCore — pwn (75pts, 64 solves)
 
 > "The system administrator needs to verify the integrity of /flag.txt"
 
@@ -50,7 +50,7 @@ the `.so` used raw x86-64 syscalls because there's no libc linking available in 
 
 ---
 
-## extremely Bad Password Filter — Rev (79pts, 66 solves)
+## extremely Bad Password Filter — rev (79pts, 66 solves)
 
 > "why use simple chars when you have a whole system at your disposal?"
 
@@ -68,7 +68,7 @@ where tier is {1, 2, -1, -2} depending on position. four value arrays, 10 chars 
 
 ---
 
-## Diffie-Hellman? — Crypto (158pts, 33 solves)
+## Diffie-Hellman? — crypto (158pts, 33 solves)
 
 > "Looks to me like a standard dh key exchange"
 
@@ -78,7 +78,7 @@ DH with g=2 over a big prime. private keys from `random.getrandbits(2235)` (pyth
 
 **parity oracle**: send P-1 as your public key. `pow(P-1, priv, P)` = 1 if priv is even, P-1 if priv is odd. try both decryptions to learn each Charlie's private key LSB.
 
-the LSB of `temper(state[index])` is a **linear function over GF(2)** of the MT state bits. each oracle query gives one equation. track the state symbolically through twists, build a massive GF(2) linear system.
+the LSB of `temper(state[index])` is a linear function over GF(2) of the MT state bits. each oracle query gives one equation. track the state symbolically through twists, build a massive GF(2) linear system.
 
 21,000 queries. ~2,356 MT twist generations. gaussian elimination with packed uint64 representation. 19,937 pivots. recover the full initial state → derive Alice's private key → decrypt flag.
 
@@ -86,7 +86,7 @@ this one took ~53 minutes of pure grinding against the remote. worth it.
 
 ---
 
-## asso — Web (158pts, 29 solves)
+## asso — web (158pts, 29 solves)
 
 > "We're Key-cloaked from head to toe"
 
@@ -99,11 +99,11 @@ keycloak SSO system. flag store SPA at `/app/flag/` needs `resource_access.app-f
 3. `client_credentials` grant with leaked secret → service account token with `access` role
 4. present token to `/app/flag/api/flag` → flag
 
-SSO misconfiguration speedrun any%. the client secret was literally just sitting in a public config endpoint.
+SSO misconfiguration speedrun any%. the client secret was literally sitting in a public config endpoint.
 
 ---
 
-## PSP is love, PSP is life — Pwn (138pts, 28 solves)
+## PSP is love, PSP is life — pwn (138pts, 28 solves)
 
 > "Check out this BRAND NEW GAME!"
 
@@ -128,4 +128,4 @@ server screenshots the PPSSPP window. flag appears on screen. beautiful.
 
 16/22 is solid for a 24hr CTF. the ones we couldn't crack: Shaka (informix JDBC with no outbound networking — absolutely demonic), Innuendo (halo2 ZK proof forgery — we wrote a phd thesis worth of analysis and still couldn't find the exploit), and the remaining binary challenges (no x86 on our aarch64 daily driver, skill issue).
 
-shoutout to fibonhack for a genuinely good CTF. the challenges were creative and well-balanced. see you in the next one o7
+shoutout to fibonhack for a genuinely good CTF. challenges were creative and well-balanced. see you in the next one o7
