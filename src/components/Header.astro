@@ -17,13 +17,7 @@
             <a href="/team">Bios</a>
         </div>
         <div class="social-links">
-            <button id="terminal-toggle" title="Terminal Mode (Ctrl+`)" aria-label="Toggle Terminal">
-                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="4 17 10 11 4 5"></polyline>
-                    <line x1="12" y1="19" x2="20" y2="19"></line>
-                </svg>
-            </button>
-            <a href="https://x.com/idktheflag" target="_blank" title="X / Twitter">
+<a href="https://x.com/idktheflag" target="_blank" title="X / Twitter">
                 <span class="sr-only">X / Twitter</span>
                 <svg viewBox="0 0 24 24" aria-hidden="true" width="28" height="28" fill="currentColor">
                     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.259 5.631 5.905-5.631zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
@@ -50,13 +44,6 @@
         <a href="/about">About</a>
         <a href="/team">Bios</a>
         <div class="mobile-menu-bottom">
-            <button id="terminal-toggle-mobile" aria-label="Toggle Terminal">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="4 17 10 11 4 5"></polyline>
-                    <line x1="12" y1="19" x2="20" y2="19"></line>
-                </svg>
-                Terminal
-            </button>
             <a href="https://x.com/idktheflag" target="_blank">Twitter</a>
             <a href="https://github.com/idktheflag" target="_blank">GitHub</a>
         </div>
@@ -80,16 +67,7 @@
         });
     });
 
-    // Mobile terminal toggle
-    const termToggleMobile = document.getElementById('terminal-toggle-mobile');
-    if (termToggleMobile) {
-        termToggleMobile.addEventListener('click', () => {
-            hamburger.classList.remove('open');
-            mobileMenu.classList.remove('open');
-            document.getElementById('terminal-overlay')?.classList.remove('terminal-hidden');
-            document.getElementById('terminal-input')?.focus();
-        });
-    }
+
 </script>
 
 <style>
@@ -155,24 +133,7 @@
         justify-content: flex-end;
     }
 
-    #terminal-toggle {
-        background: none;
-        border: 1px solid #30363d;
-        color: var(--text-heading);
-        cursor: pointer;
-        padding: 0.3em 0.5em;
-        border-radius: 4px;
-        display: flex;
-        align-items: center;
-        transition: border-color 0.2s ease, color 0.2s ease;
-    }
-
-    #terminal-toggle:hover {
-        border-color: var(--accent);
-        color: var(--accent);
-    }
-
-    .sr-only {
+.sr-only {
         position: absolute;
         width: 1px;
         height: 1px;

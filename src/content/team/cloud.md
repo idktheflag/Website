@@ -2,7 +2,7 @@
 name: cloud
 nicknames: []
 pfp: /pfps/cloud.png
-role: Coach
+role: Co-Founder
 specialties: ['general']
 hobbies: ['gym', 'philosophy', 'robotics', 'swimming']
 socials: []
