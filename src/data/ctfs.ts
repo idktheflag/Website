@@ -45,14 +45,7 @@ export const ctfOverrides: Record<string, {
     note?: string;
     writeups?: string[];
 }> = {
-    'TJCTF 2026':               { ratingPoints: 36.767 },
-    'From Dusk Till Dawn Quals': { ratingPoints: 13.245, writeups: ['dusk-till-dawn-2026'] },
-    'UMDCTF 2026':              { ratingPoints: 30.105 },
-    'UMassCTF 2026':            { ratingPoints: 24.766 },
-    'SillyCTF 2':               { ratingPoints: 13.486 },
-    'RITSEC CTF 2026':          { ratingPoints: 12.004, note: '7th Academic Division' },
-    '0xFUN CTF 2026':           { ratingPoints: 7.088 },
-    'LA CTF 2026':              { ratingPoints: 19.276 },
-    'Pragyan CTF 2026':         { ratingPoints: 0.128 },
-    'PascalCTF 2026':           { ratingPoints: 15.394 },
+    'THEM?!CTF 2026':            { writeups: ['oshit'] },
+    'From Dusk Till Dawn Quals': { writeups: ['dusk-till-dawn-2026'] },
+    'RITSEC CTF 2026':          { note: '7th Academic Division' },
 };

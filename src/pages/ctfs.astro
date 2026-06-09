@@ -55,7 +55,7 @@ function getWriteupPosts(writeupIds: string[]) {
                         const writeupPosts = getWriteupPosts(ctf.writeups);
                         return (
                             <tr>
-                                <td class="place" data-label="Place: ">{typeof ctf.place === 'number' ? `#${ctf.place}` : ctf.place}</td>
+                                <td class="place" data-label="Place: ">{ctf.place === 1 ? '👑 #1' : typeof ctf.place === 'number' ? `#${ctf.place}` : ctf.place}</td>
                                 <td class="event" data-label="">{ctf.name}{ctf.note && <span class="note"> ({ctf.note})</span>}</td>
                                 <td data-label="CTF Points: ">{ctf.ctfPoints !== null ? ctf.ctfPoints.toLocaleString() : <span class="no-writeup">-</span>}</td>
                                 <td data-label="Rating: ">{ctf.ratingPoints !== null ? ctf.ratingPoints : <span class="no-writeup">-</span>}</td>

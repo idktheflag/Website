@@ -52,7 +52,7 @@ export async function fetchCtfData(): Promise<{ ctfs: CtfEntry[]; stats: CtfStat
                 date: new Date(event.time * 1000),
                 place: score.place as number,
                 ctfPoints: parseFloat(score.points),
-                ratingPoints: overrides.ratingPoints ?? null,
+                ratingPoints: overrides.ratingPoints ?? (score.rating_points ? Math.round(parseFloat(score.rating_points) * 1000) / 1000 : null),
                 writeups: overrides.writeups ?? [],
                 note: overrides.note ?? null,
             };
