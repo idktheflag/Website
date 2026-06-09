@@ -5,6 +5,14 @@ export const CTFTIME_YEAR = '2026';
 // appear in the right chronological position relative to CTFtime events.
 export const manualCtfs = [
     {
+        name: 'DEF CON CTF Qualifier 2026',
+        sortDate: new Date('2026-05-23'),
+        place: 20,
+        ctfPoints: null as number | string | null,
+        writeups: [] as string[],
+        note: 'Played as SWV, no idktheflag rating points',
+    },
+    {
         name: 'National Cyber League',
         sortDate: new Date('2026-04-12'),
         place: '5th Overall / 1st HS',
