@@ -4,7 +4,7 @@ The public website for **idktheflag**, a competitive CTF team. Live at [idkthefl
 
 ## What it does
 
-- **Homepage** — team intro
+- **Homepage** — team intro and stuff
 - **About** — full roster with roles, semi-active, retired members, and contact info
 - **CTFs** — live CTF history pulled from the CTFtime API, with rating points, placements, and links to writeups
 - **Blog** — writeups and posts authored by team members, rendered from markdown
